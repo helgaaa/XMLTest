@@ -7,12 +7,13 @@ package Model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author HB
  */
-
+@XmlType(propOrder={"id", "name"})
 @XmlRootElement
 public class User {
     
