@@ -5,19 +5,14 @@
  */
 package Data;
 
-
-import Model.Employee;
-import Model.Operator;
-import java.util.List;
-import javax.xml.bind.annotation.XmlSeeAlso;
-
 /**
  *
  * @author HB
  */
-@XmlSeeAlso({Operator.class})
+
 public class repoEmployee {
 
+    /*
     public Employee getEmployeeById(String id){
         for (Employee employee : employees()) {
             if (employee.getId().equals(id)) {
@@ -39,4 +34,5 @@ public class repoEmployee {
     public List<Employee> employees(){
         return XMLDataHandler.getAppInstance().getState().getEmployeeList();
     }
+    */
 }
