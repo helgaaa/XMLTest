@@ -6,14 +6,14 @@
 package Model;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
 
 /**
  *
  * @author HB
  */
+public class Operator extends Employee {
+    
+    @XmlElement
+    private final String userType = "Operator";
 
-@XmlSeeAlso({Operator.class})
-public abstract class Employee extends User{
-   
 }

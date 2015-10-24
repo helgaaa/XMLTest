@@ -7,13 +7,15 @@ package Data;
 
 
 import Model.Employee;
-import Model.User;
+import Model.Operator;
 import java.util.List;
+import javax.xml.bind.annotation.XmlSeeAlso;
 
 /**
  *
  * @author HB
  */
+@XmlSeeAlso({Operator.class})
 public class repoEmployee {
 
     public Employee getEmployeeById(String id){

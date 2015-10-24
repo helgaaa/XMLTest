@@ -11,6 +11,8 @@ import Data.repoUser;
 import Model.User;
 import Data.repoUser;
 import Model.Employee;
+import Model.Operator;
+import Model.Passenger;
 import java.util.List;
 
 /**
@@ -24,26 +26,32 @@ public class XMLTest {
      */
     public static void main(String[] args) {
         repoUser userRepo = new repoUser();
-        repoEmployee employeeRepo = new repoEmployee();
         
         List<User> users = userRepo.getUsers();
-        List<Employee> employees = employeeRepo.getEmployees();
         
-        Employee anett = (Employee) userRepo.getUserById("A01");
-        User helga = userRepo.getUserById("H02");
+        Operator anett = (Operator) userRepo.getUserById("A01");
+        Employee helga = (Employee) userRepo.getUserById("H02");
+        Passenger tomi = (Passenger) userRepo.getUserById("T03");
         
         if (anett == null) {
-            anett = new Employee();
+            anett = new Operator();
             anett.setId("A01");
             anett.setName("Anett");
             users.add(anett);
         }
         
         if (helga == null) {
-            helga = new Employee();
+            helga = new Operator();
             helga.setId("H02");
             helga.setName("Helga");
             users.add(helga);
+        }
+        
+        if (tomi == null) {
+            tomi = new Passenger();
+            tomi.setId("T03");
+            tomi.setName("Tomi");
+            users.add(tomi);
         }
         
         XMLDataHandler.getAppInstance().saveState();

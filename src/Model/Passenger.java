@@ -5,10 +5,13 @@
  */
 package Model;
 
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  *
  * @author HB
  */
 public class Passenger extends User {
-    
+    @XmlElement
+    private final String userType = "Passenger";
 }

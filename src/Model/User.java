@@ -22,10 +22,7 @@ public abstract class User {
     
     private String id;
     private String name;
-    /*
-    @XmlElement
-    private String userType;
-    */
+    
     public String getId() {
         return id;
     }
