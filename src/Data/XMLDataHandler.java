@@ -7,6 +7,7 @@ package Data;
 
 import Model.User;
 import java.io.File;
+import java.io.FileInputStream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -43,7 +44,7 @@ public class XMLDataHandler {
             JAXBContext jaxbContext = JAXBContext.newInstance(applicationState.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             myAppState = (applicationState) jaxbUnmarshaller.unmarshal(file);
-
+            
         } catch (Exception ex) {
             System.out.println("Could not load application state");
             System.out.println(ex);

@@ -6,7 +6,6 @@
 package Data;
 
 import Model.User;
-import java.nio.file.FileSystem;
 import java.util.List;
 
 /**
@@ -34,6 +33,7 @@ public class repoUser {
     }
     
     public List<User> users(){
-        return XMLDataHandler.getAppInstance().getState().getUsers();
+
+        return XMLDataHandler.getAppInstance().getState().getUserList();
     }
 }

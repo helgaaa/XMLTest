@@ -5,10 +5,12 @@
  */
 package Data;
 
+import Model.Employee;
 import Model.User;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -19,14 +21,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class applicationState {
     
     @XmlElement
-    private List<User> users;
+    private List<User> user;
+    
+    @XmlElement
+    private List<Employee> employee;
     
     public applicationState() {
-        users = new ArrayList<>();
+        user = new ArrayList<>();
     }
     
-    public List<User> getUsers() {
-        return users;
+    public List<User> getUserList() {
+        return user;
+    }
+    
+    public List<Employee> getEmployeeList() {
+        return employee;
     }
     
 }

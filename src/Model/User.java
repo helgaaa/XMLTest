@@ -6,24 +6,31 @@
 package Model;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author HB
  */
-@XmlType(propOrder={"id", "name"})
+//@XmlType(propOrder={"id", "userType", "name"})
+@XmlSeeAlso({Employee.class, Passenger.class})
 @XmlRootElement
-public class User {
+public abstract class User {
     
     private String id;
     private String name;
-
+    /*
+    @XmlElement
+    private String userType;
+    */
     public String getId() {
         return id;
     }
     
+    @XmlID
     @XmlElement
     public void setId(String id) {
         this.id = id;
@@ -37,6 +44,6 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
+
+  
 }

@@ -6,9 +6,11 @@
 package xmltest;
 
 import Data.XMLDataHandler;
+import Data.repoEmployee;
 import Data.repoUser;
 import Model.User;
 import Data.repoUser;
+import Model.Employee;
 import java.util.List;
 
 /**
@@ -22,26 +24,30 @@ public class XMLTest {
      */
     public static void main(String[] args) {
         repoUser userRepo = new repoUser();
-        List<User> users = userRepo.getUsers();
+        repoEmployee employeeRepo = new repoEmployee();
         
-        User anett = userRepo.getUserById("A01");
+        List<User> users = userRepo.getUsers();
+        List<Employee> employees = employeeRepo.getEmployees();
+        
+        Employee anett = (Employee) userRepo.getUserById("A01");
         User helga = userRepo.getUserById("H02");
         
         if (anett == null) {
-            anett = new User();
+            anett = new Employee();
             anett.setId("A01");
             anett.setName("Anett");
             users.add(anett);
         }
         
         if (helga == null) {
-            helga = new User();
+            helga = new Employee();
             helga.setId("H02");
             helga.setName("Helga");
             users.add(helga);
         }
         
         XMLDataHandler.getAppInstance().saveState();
+
     }
     
 }
